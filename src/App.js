@@ -1,9 +1,10 @@
-import './App.css';
+import React from 'react';
+import Sidebar from './sidebar';
 
 function App() {
   return (
-    <div className="text-lg">
-      <p className="border-l-rose-900">test</p>
+    <div className="absolute inset-0">
+        <Sidebar />
     </div>
   );
 }
