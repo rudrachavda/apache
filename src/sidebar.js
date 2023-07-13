@@ -1,3 +1,8 @@
+/**
+ * The Sidebar component is a React component that allows users to upload a CSV file, parse the data,
+ * and select X and Y values to display in a chart.
+ * @returns The Sidebar component is being returned.
+ */
 import React, { useState } from 'react';
 import Papa from 'papaparse';
 import Chart from './chart';
@@ -21,7 +26,7 @@ function Sidebar() {
   }
 
 
-  
+
   const handleFile = (event) => {
     const uploadedFile = event.target.files[0];
 
@@ -40,7 +45,7 @@ function Sidebar() {
             console.log("keys", keys)
             // console.log(keys);
             //keys = [customer name, balance,  zipcode, state]
-            //results.data[0] = [customername:brijesh, balance:1000,]
+            //results.data[0] = [customername:rudra, balance:1000,]
             //results.data[0]['customername']
             let tmpJson = {
 
@@ -71,9 +76,10 @@ function Sidebar() {
   return (
     <div className="grid grid-cols-2">
       <div className="border-black border-1">
-        <input onChange={handleFile} className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file" />
+        <input onChange={handleFile} 
+        className="block w-1/2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 mt-2 ml-2" id="file_input" type="file" />
 
-        <div className="flex items-center mb-4">
+        <div className="flex items-center mb-4 ml-2 mt-2">
           <label htmlFor={`X axis`} className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
             {'X'}
           </label>
@@ -93,7 +99,7 @@ function Sidebar() {
         </div>
 
       </div>
-      <div className="mb-5">
+      <div className=" w-3/4 mb-5">
         <Chart xAxisLabel={xLabel} xAxisData={xData} yAxisLabel={yLabel} yAxisData={yData} />
       </div>
     </div>
@@ -102,23 +108,3 @@ function Sidebar() {
 
 export default Sidebar;
 
-
-{/* <div class="flex items-center mb-4">
-            <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-            <label for="default-checkbox" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{item}</label>
-            <label>
-            <input
-              id="html"
-              name="type"
-              type="radio"
-            /> X Axis
-            </label>
-            <label>
-            <input
-              id="html"
-              name="type"
-              type="radio"
-            /> Y Axis
-            </label>
-
-          </div> */}
