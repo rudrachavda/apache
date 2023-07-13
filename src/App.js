@@ -1,9 +1,10 @@
 import React from 'react';
 import Sidebar from './sidebar';
+import Chart from './chart';
 
 function App() {
   return (
-    <div className="absolute inset-0">
+    <div className="mb-3">
         <Sidebar />
     </div>
   );
