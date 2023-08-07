@@ -1,8 +1,3 @@
-/**
- * The `Chart` component is a React component that renders a graph using ECharts library and allows the
- * user to switch between different chart types (line, bar, pie) using buttons.
- * @returns The Chart component is being returned.
- */
 import React, { useEffect, useState } from "react";
 import ReactEcharts from "echarts-for-react";
 
